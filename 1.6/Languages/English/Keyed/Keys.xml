@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<LanguageData>
+  <Disc_YouDiscovered>You discovered:</Disc_YouDiscovered>
+  <Disc_GotIt>Got it!</Disc_GotIt>
+  <Disc_ViewGenes>View genes</Disc_ViewGenes>
+  <Disc_CustomXenotype>Custom xenotype: {0}</Disc_CustomXenotype>
+  
+  <Disc_EnableDiscoverySystem>Enable discovery system</Disc_EnableDiscoverySystem>
+  <Disc_ExcludeResearched>Exclude everything that is researched</Disc_ExcludeResearched>
+  <Disc_ExcludeStartingScenario>Exclude everything spawned from starting scenario</Disc_ExcludeStartingScenario>
+  <Disc_ExcludeStartingXenotypes>Exclude starting pawn xenotypes from discovery</Disc_ExcludeStartingXenotypes>
+  <Disc_ExcludeStartingAnimals>Exclude starting colony animals from discovery</Disc_ExcludeStartingAnimals>
+  <Disc_SaveToClient>Save discoveries to client instead of save file</Disc_SaveToClient>
+  <Disc_ResetSaveFile>Reset all discoveries on this save file</Disc_ResetSaveFile>
+  <Disc_ResetClient>Reset all discoveries saved to client</Disc_ResetClient>
+</LanguageData>
