@@ -8,7 +8,7 @@
         <onCamera>True</onCamera>
         <grains>
           <li Class="AudioGrain_Clip">
-            <clipPath>UI/TinyBell</clipPath>
+            <clipPath>Discovery</clipPath>
           </li>
         </grains>
         <volumeRange>40</volumeRange>
