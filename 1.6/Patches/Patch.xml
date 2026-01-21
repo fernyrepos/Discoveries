@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Patch>
+  <Operation Class="PatchOperationAddModExtension">
+    <xpath>Defs/ThingDef[defName="Gun_AssaultRifle"]</xpath>
+    <value>
+      <li Class="Discoveries.UnlockResearchOnDiscovery">
+        <researchProject>Gunsmithing</researchProject>
+      </li>
+    </value>
+  </Operation>
+</Patch>

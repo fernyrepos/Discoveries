@@ -4,7 +4,6 @@
   <Disc_GotIt>Got it!</Disc_GotIt>
   <Disc_ViewGenes>View genes</Disc_ViewGenes>
   <Disc_CustomXenotype>Custom xenotype: {0}</Disc_CustomXenotype>
-  
   <Disc_EnableDiscoverySystem>Enable discovery system</Disc_EnableDiscoverySystem>
   <Disc_ExcludeResearched>Exclude everything that is researched</Disc_ExcludeResearched>
   <Disc_ExcludeStartingScenario>Exclude everything spawned from starting scenario</Disc_ExcludeStartingScenario>
@@ -15,4 +14,6 @@
   <Disc_SaveToClient>Save discoveries to client instead of save file</Disc_SaveToClient>
   <Disc_ResetSaveFile>Reset all discoveries on this save file</Disc_ResetSaveFile>
   <Disc_ResetClient>Reset all discoveries saved to client</Disc_ResetClient>
+  <Disc_ResearchNotDiscovered>A relevant thing or creature has not been discovered yet.</Disc_ResearchNotDiscovered>
+  <Disc_ResearchUnlocked>{0} research project is now available!</Disc_ResearchUnlocked>
 </LanguageData>

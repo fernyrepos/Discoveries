@@ -1,13 +1,14 @@
 using System.Collections.Generic;
-using RimWorld;
 using Verse;
 namespace Discoveries
 {
+    [HotSwappable]
     public static class DiscoveryTracker
     {
         public static HashSet<string> discoveredThingDefNames = new HashSet<string>();
         public static HashSet<string> discoveredXenotypeDefNames = new HashSet<string>();
         public static HashSet<string> discoveredCustomXenotypes = new HashSet<string>();
+        public static HashSet<string> discoveredResearchProjectDefNames = new HashSet<string>();
         public static bool IsDiscovered(Thing thing)
         {
             if (thing is Pawn pawn && pawn.RaceProps.Humanlike)
@@ -58,6 +59,13 @@ namespace Discoveries
         public static void MarkStartingThingsDiscovered(List<Thing> startingThings)
         {
             if (!DiscoveriesMod.settings.excludeStartingScenario) return;
+            foreach (var pawn in Find.GameInitData.startingAndOptionalPawns)
+            {
+                if (startingThings.Contains(pawn) is false)
+                {
+                    startingThings.Add(pawn);
+                }
+            }
             foreach (Thing thing in startingThings)
             {
                 if (thing is Pawn pawn)
@@ -70,11 +78,35 @@ namespace Discoveries
                 MarkDiscovered(thing);
             }
         }
+        public static bool IsResearchDiscovered(ResearchProjectDef research)
+        {
+            return discoveredResearchProjectDefNames.Contains(research.defName);
+        }
+        public static void MarkResearchDiscovered(ResearchProjectDef research)
+        {
+            discoveredResearchProjectDefNames.Add(research.defName);
+        }
+        public static bool HasDiscoveryRequirement(ResearchProjectDef research)
+        {
+            foreach (var thingDef in DefDatabase<ThingDef>.AllDefs)
+            {
+                if (thingDef.HasModExtension<UnlockResearchOnDiscovery>())
+                {
+                    var extension = thingDef.GetModExtension<UnlockResearchOnDiscovery>();
+                    if (extension.researchProject == research)
+                    {
+                        return true;
+                    }
+                }
+            }
+            return false;
+        }
         public static void ExposeData()
         {
             Scribe_Collections.Look(ref discoveredThingDefNames, "discoveredThingDefNames", LookMode.Value);
             Scribe_Collections.Look(ref discoveredXenotypeDefNames, "discoveredXenotypeDefNames", LookMode.Value);
             Scribe_Collections.Look(ref discoveredCustomXenotypes, "discoveredCustomXenotypes", LookMode.Value);
+            Scribe_Collections.Look(ref discoveredResearchProjectDefNames, "discoveredResearchProjectDefNames", LookMode.Value);
         }
     }
 }

@@ -1,6 +1,7 @@
 using RimWorld;
 using UnityEngine;
 using Verse;
+using Verse.Sound;
 namespace Discoveries
 {
     [HotSwappable]
@@ -19,7 +20,7 @@ namespace Discoveries
             closeOnClickedOutside = false;
             doCloseX = false;
         }
-        public override Vector2 InitialSize => new Vector2(600f, 600f);
+        public override Vector2 InitialSize => new Vector2(600f, 700f);
         public override void DoWindowContents(Rect inRect)
         {
             float titleHeight = 40f;
@@ -29,10 +30,10 @@ namespace Discoveries
             float labelHeight = 30f;
             float labelWidth = 400f;
             float descOffset = 10f;
-            float descHeight = 100f;
-            float descWidth = 350f;
+            float descHeight = 200f;
+            float descWidth = 375f;
             float buttonHeight = 30f;
-            float buttonWidth = 150f;
+            float buttonWidth = descWidth;
 
             Text.Font = GameFont.Medium;
             Text.Anchor = TextAnchor.UpperCenter;
@@ -64,17 +65,17 @@ namespace Discoveries
             Widgets.LabelScrollable(descRect, description, ref scrollPosition);
             if (isHumanlike)
             {
-                if (Widgets.ButtonText(new Rect(inRect.width - buttonWidth, inRect.height - buttonHeight * 2f - 10, buttonWidth, buttonHeight), "Disc_ViewGenes".Translate()))
+                if (Widgets.ButtonText(new Rect(inRect.width / 2f - buttonWidth / 2f, inRect.height - buttonHeight * 2f - 10, buttonWidth, buttonHeight), "Disc_ViewGenes".Translate()))
                 {
                     Find.WindowStack.Add(new Dialog_ViewGenes(pawn));
                 }
             }
-            if (Widgets.ButtonText(new Rect(inRect.width - buttonWidth, inRect.height - buttonHeight, buttonWidth, buttonHeight), "Disc_GotIt".Translate()))
+            if (Widgets.ButtonText(new Rect(inRect.width / 2f - buttonWidth / 2f, inRect.height - buttonHeight, buttonWidth, buttonHeight), "Disc_GotIt".Translate()))
             {
                 Close();
             }
         }
-        
+
         private static Vector2 scrollPosition = Vector2.zero;
         private string GetXenotypeLabel()
         {
@@ -104,6 +105,21 @@ namespace Discoveries
         {
             base.Close(doCloseSound);
             Find.Selector.Select(thing);
+            UnlockResearchForThing(thing);
+        }
+
+        private static void UnlockResearchForThing(Thing thing)
+        {
+            if (thing.def.HasModExtension<UnlockResearchOnDiscovery>())
+            {
+                var extension = thing.def.GetModExtension<UnlockResearchOnDiscovery>();
+                if (extension.researchProject != null && !DiscoveryTracker.IsResearchDiscovered(extension.researchProject))
+                {
+                    DiscoveryTracker.MarkResearchDiscovered(extension.researchProject);
+                    DefsOf.Disc_ResearchUnlock.PlayOneShotOnCamera();
+                    Find.WindowStack.Add(new Window_Message("Disc_ResearchUnlocked".Translate(extension.researchProject.LabelCap)));
+                }
+            }
         }
     }
 }

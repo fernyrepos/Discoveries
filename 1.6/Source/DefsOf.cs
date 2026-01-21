@@ -6,5 +6,6 @@ namespace Discoveries
     public static class DefsOf
     {
         public static SoundDef Disc_Discovery;
+        public static SoundDef Disc_ResearchUnlock;
     }
 }

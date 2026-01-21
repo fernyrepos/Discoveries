@@ -15,4 +15,19 @@
       </li>
     </subSounds>
   </SoundDef>
+  <SoundDef>
+    <defName>Disc_ResearchUnlock</defName>
+    <maxSimultaneous>1</maxSimultaneous>
+    <subSounds>
+      <li>
+        <onCamera>True</onCamera>
+        <grains>
+          <li Class="AudioGrain_Clip">
+            <clipPath>UI/TinyBell</clipPath>
+          </li>
+        </grains>
+        <volumeRange>40</volumeRange>
+      </li>
+    </subSounds>
+  </SoundDef>
 </Defs>
