@@ -80,7 +80,7 @@ namespace Discoveries
         }
         public static bool IsResearchDiscovered(ResearchProjectDef research)
         {
-            return discoveredResearchProjectDefNames.Contains(research.defName);
+            return research.IsFinished || discoveredResearchProjectDefNames.Contains(research.defName);
         }
         public static void MarkResearchDiscovered(ResearchProjectDef research)
         {
