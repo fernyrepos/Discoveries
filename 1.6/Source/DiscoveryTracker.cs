@@ -55,6 +55,21 @@ namespace Discoveries
                 discoveredCustomXenotypes.Add(pawn.genes.xenotypeName);
             }
         }
+        public static void MarkStartingThingsDiscovered(List<Thing> startingThings)
+        {
+            if (!DiscoveriesMod.settings.excludeStartingScenario) return;
+            foreach (Thing thing in startingThings)
+            {
+                if (thing is Pawn pawn)
+                {
+                    if (pawn.RaceProps.Animal && !DiscoveriesMod.settings.excludeStartingAnimals)
+                        continue;
+                    if (pawn.RaceProps.Humanlike && !DiscoveriesMod.settings.excludeStartingXenotypes)
+                        continue;
+                }
+                MarkDiscovered(thing);
+            }
+        }
         public static void ExposeData()
         {
             Scribe_Collections.Look(ref discoveredThingDefNames, "discoveredThingDefNames", LookMode.Value);

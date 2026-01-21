@@ -22,9 +22,27 @@ namespace Discoveries
         }
         private static bool ShouldExclude(Thing thing)
         {
+            if (thing is Blueprint || thing is Frame)
+            {
+                return true;
+            }
             if (thing.def.HasModExtension<ExcludeFromDiscoveries>())
             {
                 return true;
+            }
+            if (thing is Pawn)
+            {
+                if (!DiscoveriesMod.settings.enableDiscoveryForPawns)
+                {
+                    return true;
+                }
+            }
+            else
+            {
+                if (!DiscoveriesMod.settings.enableDiscoveryForThings)
+                {
+                    return true;
+                }
             }
             if (DiscoveriesMod.settings.excludeResearched)
             {

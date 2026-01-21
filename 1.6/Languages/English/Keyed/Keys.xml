@@ -10,6 +10,8 @@
   <Disc_ExcludeStartingScenario>Exclude everything spawned from starting scenario</Disc_ExcludeStartingScenario>
   <Disc_ExcludeStartingXenotypes>Exclude starting pawn xenotypes from discovery</Disc_ExcludeStartingXenotypes>
   <Disc_ExcludeStartingAnimals>Exclude starting colony animals from discovery</Disc_ExcludeStartingAnimals>
+  <Disc_EnableDiscoveryForThings>Enable discovery for things</Disc_EnableDiscoveryForThings>
+  <Disc_EnableDiscoveryForPawns>Enable discovery for pawns</Disc_EnableDiscoveryForPawns>
   <Disc_SaveToClient>Save discoveries to client instead of save file</Disc_SaveToClient>
   <Disc_ResetSaveFile>Reset all discoveries on this save file</Disc_ResetSaveFile>
   <Disc_ResetClient>Reset all discoveries saved to client</Disc_ResetClient>

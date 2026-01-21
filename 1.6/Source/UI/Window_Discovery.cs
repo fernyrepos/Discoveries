@@ -23,16 +23,16 @@ namespace Discoveries
         public override void DoWindowContents(Rect inRect)
         {
             float titleHeight = 40f;
-            float iconSize = 300f;
+            float iconSize = 250f;
             float iconOffset = 50f;
             float labelOffset = 10f;
             float labelHeight = 30f;
             float labelWidth = 400f;
-            float descOffset = 20f;
+            float descOffset = 10f;
             float descHeight = 100f;
-            float descWidth = 400f;
+            float descWidth = 350f;
             float buttonHeight = 30f;
-            float buttonWidth = 100f;
+            float buttonWidth = 150f;
 
             Text.Font = GameFont.Medium;
             Text.Anchor = TextAnchor.UpperCenter;

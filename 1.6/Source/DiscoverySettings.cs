@@ -8,6 +8,8 @@ namespace Discoveries
         public bool excludeStartingScenario = true;
         public bool excludeStartingXenotypes = true;
         public bool excludeStartingAnimals = true;
+        public bool enableDiscoveryForThings = true;
+        public bool enableDiscoveryForPawns = true;
         public bool saveToClient = false;
         public override void ExposeData()
         {
@@ -17,6 +19,8 @@ namespace Discoveries
             Scribe_Values.Look(ref excludeStartingScenario, "excludeStartingScenario", true);
             Scribe_Values.Look(ref excludeStartingXenotypes, "excludeStartingXenotypes", true);
             Scribe_Values.Look(ref excludeStartingAnimals, "excludeStartingAnimals", true);
+            Scribe_Values.Look(ref enableDiscoveryForThings, "enableDiscoveryForThings", true);
+            Scribe_Values.Look(ref enableDiscoveryForPawns, "enableDiscoveryForPawns", true);
             Scribe_Values.Look(ref saveToClient, "saveToClient", false);
             if (saveToClient)
             {
