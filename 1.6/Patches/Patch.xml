@@ -1,25 +1,31 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <Patch>
+
   <Operation Class="PatchOperationAddModExtension">
-    <xpath>Defs/ThingDef[defName="Gun_AssaultRifle"]</xpath>
+    <xpath>Defs/ThingDef[@Name="TreeBase"]</xpath>
     <value>
       <li Class="Discoveries.UnlockResearchOnDiscovery">
-        <researchProject>Gunsmithing</researchProject>
+        <researchProject>TreeSowing</researchProject>
       </li>
     </value>
   </Operation>
+
   <Operation Class="PatchOperationAddModExtension">
-    <xpath>Defs/ThingDef[defName="Apparel_PowerArmorHelmet"]</xpath>
+    <xpath>Defs/ThingDef[defName="SteamGeyser"]</xpath>
     <value>
       <li Class="Discoveries.UnlockResearchOnDiscovery">
-        <researchProjects>
-          <li>PoweredArmor</li>
-          <li>ChargedShot</li>
-        </researchProjects>
+        <researchProject>GeothermalPower</researchProject>
       </li>
     </value>
   </Operation>
-  <Operation Class="PatchOperationAddModExtension">
+
+
+
+
+<!-- EXAMPLES -->
+
+
+  <!-- <Operation Class="PatchOperationAddModExtension">
     <xpath>Defs/FactionDef[defName="Empire"]</xpath>
     <value>
       <li Class="Discoveries.UnlockResearchOnDiscovery">
@@ -40,5 +46,8 @@
     <value>
       <li Class="Discoveries.ExcludeFromDiscoveries" />
     </value>
-  </Operation>
+  </Operation> -->
+
+
+
 </Patch>
