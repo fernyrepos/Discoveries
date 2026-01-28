@@ -7,6 +7,11 @@ namespace Discoveries
     public static class DiscoveryQueue
     {
         private static Queue<Action> windowQueue = new Queue<Action>();
+        private static Thing thingToReselect;
+        public static void StartDiscoverySequence(Thing thing)
+        {
+            thingToReselect = thing;
+        }
         public static void EnqueueDiscovery(Def def, Thing context = null)
         {
             windowQueue.Enqueue(() =>
@@ -29,6 +34,11 @@ namespace Discoveries
             {
                 var action = windowQueue.Dequeue();
                 action();
+            }
+            else if (thingToReselect != null)
+            {
+                Find.Selector.Select(thingToReselect);
+                thingToReselect = null;
             }
         }
     }

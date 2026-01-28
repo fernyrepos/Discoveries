@@ -123,7 +123,6 @@ namespace Discoveries
         {
             base.Close(doCloseSound);
             DiscoveryTracker.CheckAndQueueUnlocksFor(def);
-            if (thingContext != null) Find.Selector.Select(thingContext);
             DiscoveryQueue.TryShowNext();
         }
     }

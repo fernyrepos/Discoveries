@@ -45,6 +45,7 @@ namespace Discoveries
 
                 if (anyDiscovery)
                 {
+                    DiscoveryQueue.StartDiscoverySequence(discoveryThing);
                     __instance.ClearSelection();
                     DiscoveryQueue.TryShowNext();
                 }

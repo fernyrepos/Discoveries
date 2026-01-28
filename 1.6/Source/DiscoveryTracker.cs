@@ -1,4 +1,5 @@
 using System.Collections.Generic;
+using System.Linq;
 using RimWorld;
 using Verse;
 using Verse.Sound;
@@ -23,10 +24,9 @@ namespace Discoveries
             lockedResearchCache.Clear();
             foreach (var thingDef in DefDatabase<ThingDef>.AllDefs)
             {
-                if (thingDef.HasModExtension<UnlockResearchOnDiscovery>())
+                if (IsThingExcludedFromDiscovery(thingDef)) continue;
+                foreach (var extension in thingDef.modExtensions?.OfType<UnlockResearchOnDiscovery>() ?? Enumerable.Empty<UnlockResearchOnDiscovery>())
                 {
-                    if (IsThingExcludedFromDiscovery(thingDef)) continue;
-                    var extension = thingDef.GetModExtension<UnlockResearchOnDiscovery>();
                     foreach (var project in extension.GetProjects())
                     {
                         if (project != null) lockedResearchCache.Add(project);
@@ -35,10 +35,9 @@ namespace Discoveries
             }
             foreach (var factionDef in DefDatabase<FactionDef>.AllDefs)
             {
-                if (factionDef.HasModExtension<UnlockResearchOnDiscovery>())
+                if (factionDef.HasModExtension<ExcludeFromDiscoveries>()) continue;
+                foreach (var extension in factionDef.modExtensions?.OfType<UnlockResearchOnDiscovery>() ?? Enumerable.Empty<UnlockResearchOnDiscovery>())
                 {
-                    if (factionDef.HasModExtension<ExcludeFromDiscoveries>()) continue;
-                    var extension = factionDef.GetModExtension<UnlockResearchOnDiscovery>();
                     foreach (var project in extension.GetProjects())
                     {
                         if (project != null) lockedResearchCache.Add(project);
@@ -47,10 +46,9 @@ namespace Discoveries
             }
             foreach (var xenoDef in DefDatabase<XenotypeDef>.AllDefs)
             {
-                if (xenoDef.HasModExtension<UnlockResearchOnDiscovery>())
+                if (xenoDef.HasModExtension<ExcludeFromDiscoveries>()) continue;
+                foreach (var extension in xenoDef.modExtensions?.OfType<UnlockResearchOnDiscovery>() ?? Enumerable.Empty<UnlockResearchOnDiscovery>())
                 {
-                    if (xenoDef.HasModExtension<ExcludeFromDiscoveries>()) continue;
-                    var extension = xenoDef.GetModExtension<UnlockResearchOnDiscovery>();
                     foreach (var project in extension.GetProjects())
                     {
                         if (project != null) lockedResearchCache.Add(project);
@@ -196,37 +194,36 @@ namespace Discoveries
         }
         public static void UnlockResearchForThing(Thing thing, bool showMessage = true)
         {
-            if (!thing.def.HasModExtension<UnlockResearchOnDiscovery>())
+            foreach (var extension in thing.def.modExtensions?.OfType<UnlockResearchOnDiscovery>() ?? Enumerable.Empty<UnlockResearchOnDiscovery>())
             {
-                return;
-            }
-            var extension = thing.def.GetModExtension<UnlockResearchOnDiscovery>();
-            foreach (var project in extension.GetProjects())
-            {
-                if (project == null || IsResearchDiscovered(project))
+                foreach (var project in extension.GetProjects())
                 {
-                    continue;
-                }
-                MarkResearchDiscovered(project);
-                if (showMessage)
-                {
-                    DefsOf.Disc_ResearchUnlock.PlayOneShotOnCamera();
-                    string message = ShouldObscureResearch(project) ? "Disc_ResearchUnlockedFuture".Translate() : "Disc_ResearchUnlocked".Translate(project.LabelCap);
-                    Find.WindowStack.Add(new Window_Message(message));
+                    if (project == null || IsResearchDiscovered(project))
+                    {
+                        continue;
+                    }
+                    MarkResearchDiscovered(project);
+                    if (showMessage)
+                    {
+                        DefsOf.Disc_ResearchUnlock.PlayOneShotOnCamera();
+                        string message = ShouldObscureResearch(project) ? "Disc_ResearchUnlockedFuture".Translate() : "Disc_ResearchUnlocked".Translate(project.LabelCap);
+                        Find.WindowStack.Add(new Window_Message(message));
+                    }
                 }
             }
         }
         public static void CheckAndQueueUnlocksFor(Def discoveredDef)
         {
-            if (!discoveredDef.HasModExtension<UnlockResearchOnDiscovery>()) return;
-            var extension = discoveredDef.GetModExtension<UnlockResearchOnDiscovery>();
-            foreach (var project in extension.GetProjects())
+            foreach (var extension in discoveredDef.modExtensions?.OfType<UnlockResearchOnDiscovery>() ?? Enumerable.Empty<UnlockResearchOnDiscovery>())
             {
-                if (!IsResearchDiscovered(project))
+                foreach (var project in extension.GetProjects())
                 {
-                    MarkResearchDiscovered(project);
-                    string msg = ShouldObscureResearch(project) ? "Disc_ResearchUnlockedFuture".Translate() : "Disc_ResearchUnlocked".Translate(project.LabelCap);
-                    DiscoveryQueue.EnqueueMessage(msg);
+                    if (!IsResearchDiscovered(project))
+                    {
+                        MarkResearchDiscovered(project);
+                        string msg = ShouldObscureResearch(project) ? "Disc_ResearchUnlockedFuture".Translate() : "Disc_ResearchUnlocked".Translate(project.LabelCap);
+                        DiscoveryQueue.EnqueueMessage(msg);
+                    }
                 }
             }
         }
