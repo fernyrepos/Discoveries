@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Patch>
+
+   <Operation Class="PatchOperationAddModExtension">
+    <xpath>Defs/FactionDef[defName="UltratechEnemy_AA"]</xpath>
+    <value>
+      <li Class="Discoveries.UnlockResearchOnDiscovery">
+        <researchProject>Entry_AA</researchProject>
+      </li>
+    </value>
+  </Operation>
+
+  <Operation Class="PatchOperationAddModExtension">
+    <xpath>Defs/ThingDef[defName="AntimatterCanister_AA"]</xpath>
+    <value>
+      <li Class="Discoveries.UnlockResearchOnDiscovery">
+        <researchProject>R_AntimatterComposite_AA</researchProject>
+      </li>
+      <li Class="Discoveries.UnlockResearchOnDiscovery">
+        <researchProject>AntimatterExplosives_AA</researchProject>
+      </li>
+      <li Class="Discoveries.UnlockResearchOnDiscovery">
+        <researchProject>RangedLong_AA</researchProject>
+      </li>
+      <li Class="Discoveries.UnlockResearchOnDiscovery">
+        <researchProject>RangedMedium_AA</researchProject>
+      </li>
+      <li Class="Discoveries.UnlockResearchOnDiscovery">
+        <researchProject>ATFields_AA</researchProject>
+      </li>
+    </value>
+  </Operation>
+
+  <Operation Class="PatchOperationAddModExtension">
+    <xpath>Defs/ThingDef[defName="HyperComponent_AA"]</xpath>
+    <value>
+      <li Class="Discoveries.UnlockResearchOnDiscovery">
+        <researchProject>R_HyperComponents_AA</researchProject>
+      </li>
+    </value>
+  </Operation>
+
+  <Operation Class="PatchOperationAddModExtension">
+    <xpath>Defs/ThingDef[defName="AntimatterReactorInjector_AA"]</xpath>
+    <value>
+      <li Class="Discoveries.UnlockResearchOnDiscovery">
+        <researchProject>R_Reactor_AA</researchProject>
+      </li>
+    </value>
+  </Operation>
+
+   <Operation Class="PatchOperationAddModExtension">
+    <xpath>Defs/ThingDef[defName="Turret_ThunderGun_AA"]</xpath>
+    <value>
+      <li Class="Discoveries.UnlockResearchOnDiscovery">
+        <researchProject>R_MBD_AA</researchProject>
+      </li>
+      <li Class="Discoveries.UnlockResearchOnDiscovery">
+        <researchProject>Railgun_AA</researchProject>
+      </li>
+    </value>
+  </Operation>
+
+   <Operation Class="PatchOperationAddModExtension">
+    <xpath>Defs/ThingDef[defName="AntimatterComposite_AA"]</xpath>
+    <value>
+      <li Class="Discoveries.UnlockResearchOnDiscovery">
+        <researchProject>MeleeSpacerAdvanced_AA</researchProject>
+      </li>
+      <li Class="Discoveries.UnlockResearchOnDiscovery">
+        <researchProject>R_VoidArmor_AA</researchProject>
+      </li>
+    </value>
+  </Operation>
+
+</Patch>

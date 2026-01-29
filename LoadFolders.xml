@@ -13,5 +13,6 @@
     <li IfModActive="trickity.samurai.faction">Mods and Shit/T Samurai Faction</li>
     <li IfModActive="ninagoblin.enhancedvatlearning">Mods and Shit/Enhanced Vat Learning</li>
     <li IfModActive="vanillaexpanded.recycling">Mods and Shit/VE Recycling</li>
+    <li IfModActive="co.uk.epicguru.antimatterannihilation">Mods and Shit/Antimatter Annihilation</li>
   </v1.6>
 </loadFolders>
