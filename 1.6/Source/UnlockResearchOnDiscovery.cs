@@ -4,14 +4,28 @@ namespace Discoveries
 {
     public class UnlockResearchOnDiscovery : DefModExtension
     {
-        public ResearchProjectDef researchProject;
-        public List<ResearchProjectDef> researchProjects;
+        public string researchProject;
+        public List<string> researchProjects;
         public IEnumerable<ResearchProjectDef> GetProjects()
         {
-            if (researchProject != null) yield return researchProject;
+            if (researchProject.NullOrEmpty() is false)
+            {
+                var def = DefDatabase<ResearchProjectDef>.GetNamedSilentFail(researchProject);
+                if (def != null)
+                {
+                    yield return def;
+                }
+            }
             if (researchProjects != null)
             {
-                foreach (var proj in researchProjects) yield return proj;
+                foreach (var proj in researchProjects)
+                {
+                    var def = DefDatabase<ResearchProjectDef>.GetNamedSilentFail(proj);
+                    if (def != null)
+                    {
+                        yield return def;
+                    }
+                }
             }
         }
     }
