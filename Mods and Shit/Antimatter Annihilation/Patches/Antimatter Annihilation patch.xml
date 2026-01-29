@@ -1,15 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <Patch>
 
-   <Operation Class="PatchOperationAddModExtension">
-    <xpath>Defs/FactionDef[defName="UltratechEnemy_AA"]</xpath>
-    <value>
-      <li Class="Discoveries.UnlockResearchOnDiscovery">
-        <researchProject>Entry_AA</researchProject>
-      </li>
-    </value>
-  </Operation>
-
   <Operation Class="PatchOperationAddModExtension">
     <xpath>Defs/ThingDef[defName="AntimatterCanister_AA"]</xpath>
     <value>
