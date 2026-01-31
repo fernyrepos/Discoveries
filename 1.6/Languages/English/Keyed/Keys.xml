@@ -14,6 +14,7 @@
   <Disc_ObscureHigherTechLevel>Obscure names of projects not in your tech level</Disc_ObscureHigherTechLevel>
   <Disc_DisplayOnlyUnlocks>Display discoveries only if they are tied to unlocks</Disc_DisplayOnlyUnlocks>
   <Disc_SaveToClient>Save discoveries to client instead of save file</Disc_SaveToClient>
+  <Disc_DisableResearchUnlockSystem>Disable research unlock system (treat all research as unlocked)</Disc_DisableResearchUnlockSystem>
   <Disc_ResetSaveFile>Reset all discoveries on this save file</Disc_ResetSaveFile>
   <Disc_ResetClient>Reset all discoveries saved to client</Disc_ResetClient>
   <Disc_ResearchNotDiscovered>A relevant thing or creature has not been discovered yet.</Disc_ResearchNotDiscovered>
