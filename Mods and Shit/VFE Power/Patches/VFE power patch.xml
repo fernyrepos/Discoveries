@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Patch>          
+
+  <Operation Class="PatchOperationFindMod">
+    <mods>
+      <li>Generally More Research</li>
+    </mods>
+    <match Class="PatchOperationSequence">
+      <operations>
+
+
+  <li Class="PatchOperationAddModExtension">
+    <xpath>Defs/ThingDef[defName="GeothermalGenerator"]</xpath>
+    <value>
+      <li Class="Discoveries.UnlockResearchOnDiscovery">
+        <researchProject>Ferny_AdvancedGeothermalGenerator</researchProject>
+      </li>
+    </value>
+  </li>
+
+  <li Class="PatchOperationAddModExtension">
+    <xpath>Defs/ThingDef[defName="WindTurbine"]</xpath>
+    <value>
+      <li Class="Discoveries.UnlockResearchOnDiscovery">
+        <researchProject>Ferny_AdvancedWindTurbine</researchProject>
+      </li>
+    </value>
+  </li>
+
+  <li Class="PatchOperationAddModExtension">
+    <xpath>Defs/ThingDef[defName="SolarGenerator"]</xpath>
+    <value>
+      <li Class="Discoveries.UnlockResearchOnDiscovery">
+        <researchProject>Ferny_AdvancedSolarGenerator</researchProject>
+      </li>
+    </value>
+  </li>
+
+  <li Class="PatchOperationAddModExtension">
+    <xpath>Defs/ThingDef[defName="WatermillGenerator"]</xpath>
+    <value>
+      <li Class="Discoveries.UnlockResearchOnDiscovery">
+        <researchProject>Ferny_AdvancedWatermillGenerator</researchProject>
+      </li>
+    </value>
+  </li>
+
+
+      </operations>
+    </match>
+  </Operation>
+
+
+
+
+
+</Patch>

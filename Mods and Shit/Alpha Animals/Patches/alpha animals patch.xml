@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Patch>          
+
+
+  <Operation Class="PatchOperationFindMod">
+    <mods>
+      <li>Generally More Research</li>
+    </mods>
+    <match Class="PatchOperationSequence">
+      <operations>
+
+
+
+  <li Class="PatchOperationAddModExtension">
+    <xpath>Defs/ThingDef[defName="AA_BlueGel"]</xpath>
+    <value>
+      <li Class="Discoveries.UnlockResearchOnDiscovery">
+        <researchProject>Ferny_BlueGelBattery</researchProject>
+      </li>
+    </value>
+  </li>
+
+  <li Class="PatchOperationAddModExtension">
+    <xpath>Defs/ThingDef[defName="AA_Hexagel"]</xpath>
+    <value>
+      <li Class="Discoveries.UnlockResearchOnDiscovery">
+        <researchProject>Ferny_HexagelBattery</researchProject>
+      </li>
+    </value>
+  </li>
+
+  <li Class="PatchOperationAddModExtension">
+    <xpath>Defs/ThingDef[defName="AA_Hexagel"]</xpath>
+    <value>
+      <li Class="Discoveries.UnlockResearchOnDiscovery">
+        <researchProject>Ferny_HexagelCore</researchProject>
+      </li>
+    </value>
+  </li>
+
+
+
+      </operations>
+    </match>
+  </Operation>
+
+
+</Patch>

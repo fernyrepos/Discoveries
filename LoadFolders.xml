@@ -14,5 +14,9 @@
     <li IfModActive="ninagoblin.enhancedvatlearning">Mods and Shit/Enhanced Vat Learning</li>
     <li IfModActive="vanillaexpanded.recycling">Mods and Shit/VE Recycling</li>
     <li IfModActive="co.uk.epicguru.antimatterannihilation">Mods and Shit/Antimatter Annihilation</li>
+    <li IfModActive="vanillaexpanded.vfepower">Mods and Shit/VFE Power</li>
+    <li IfModActive="sarg.alphaanimals">Mods and Shit/Alpha Animals</li>
+    <li IfModActive="vanillaexpanded.vchemfuele">Mods and Shit/VE Chemfuel</li>
+    <li IfModActive="vanillaexpanded.vfecore">Mods and Shit/VE Furniture</li>
   </v1.6>
 </loadFolders>

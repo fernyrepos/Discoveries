@@ -13,6 +13,7 @@ namespace Discoveries
         public bool obscureHigherTechLevel = false;
         public bool displayOnlyUnlocks = false;
         public bool saveToClient = false;
+        public bool disableResearchUnlockSystem = false;
         public override void ExposeData()
         {
             base.ExposeData();
@@ -26,6 +27,7 @@ namespace Discoveries
             Scribe_Values.Look(ref obscureHigherTechLevel, "obscureHigherTechLevel", false);
             Scribe_Values.Look(ref displayOnlyUnlocks, "displayOnlyUnlocks", false);
             Scribe_Values.Look(ref saveToClient, "saveToClient", false);
+            Scribe_Values.Look(ref disableResearchUnlockSystem, "disableResearchUnlockSystem", false);
             if (saveToClient)
             {
                 DiscoveryTracker.ExposeData();

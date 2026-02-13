@@ -32,6 +32,7 @@ namespace Discoveries
             listing.CheckboxLabeled("Disc_ObscureUnavailableResearch".Translate(), ref settings.obscureUnavailableResearch);
             listing.CheckboxLabeled("Disc_ObscureHigherTechLevel".Translate(), ref settings.obscureHigherTechLevel);
             listing.CheckboxLabeled("Disc_DisplayOnlyUnlocks".Translate(), ref settings.displayOnlyUnlocks);
+            listing.CheckboxLabeled("Disc_DisableResearchUnlockSystem".Translate(), ref settings.disableResearchUnlockSystem);
             listing.CheckboxLabeled("Disc_SaveToClient".Translate(), ref settings.saveToClient);
             listing.Gap();
 

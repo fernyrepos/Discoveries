@@ -188,7 +188,7 @@ namespace Discoveries
         }
         public static bool ShouldExcludeThing(Thing thing)
         {
-            if (thing is Blueprint || thing is Frame)
+            if (thing is Blueprint || thing is Frame || thing is MinifiedThing)
             {
                 return true;
             }
@@ -253,6 +253,10 @@ namespace Discoveries
 
         public static bool IsResearchLockedByDiscovery(ResearchProjectDef research)
         {
+            if (DiscoveriesMod.settings.disableResearchUnlockSystem)
+            {
+                return false;
+            }
             return HasDiscoveryRequirement(research) && !IsResearchDiscovered(research);
         }
 

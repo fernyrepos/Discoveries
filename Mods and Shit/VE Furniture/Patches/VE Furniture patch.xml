@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Patch>          
+
+  <Operation Class="PatchOperationFindMod">
+    <mods>
+      <li>Generally More Research</li>
+    </mods>
+    <match Class="PatchOperationSequence">
+      <operations>
+
+  <li Class="PatchOperationAddModExtension">
+    <xpath>Defs/ThingDef[defName="Radio_Industrial"]</xpath>
+    <value>
+      <li Class="Discoveries.UnlockResearchOnDiscovery"><researchProject>Ferny_LongwaveRadio</researchProject></li>
+    </value>
+  </li>
+
+  <li Class="PatchOperationAddModExtension">
+    <xpath>Defs/ThingDef[defName="Joy_InudstrialComputer"]</xpath>
+    <value>
+      <li Class="Discoveries.UnlockResearchOnDiscovery"><researchProject>Ferny_ModernComputer</researchProject></li>
+    </value>
+  </li>
+
+      </operations>
+    </match>
+  </Operation>
+
+
+
+
+
+</Patch>
