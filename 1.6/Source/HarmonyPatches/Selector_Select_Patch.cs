@@ -19,9 +19,9 @@ namespace Discoveries
                 {
                     Def targetDef = discoveryThing.def;
                     if (discoveryThing is Pawn p && p.genes?.Xenotype != null) targetDef = p.genes.Xenotype;
+                    DiscoveryTracker.MarkDiscovered(discoveryThing);
                     if (!DiscoveriesMod.settings.displayOnlyUnlocks || targetDef.HasModExtension<UnlockResearchOnDiscovery>())
                     {
-                        DiscoveryTracker.MarkDiscovered(discoveryThing);
                         DiscoveryQueue.EnqueueDiscovery(targetDef, discoveryThing);
                         anyDiscovery = true;
                     }
@@ -33,9 +33,9 @@ namespace Discoveries
                     {
                         if (!discoveryThing.Faction.IsPlayer && !discoveryThing.Faction.def.HasModExtension<ExcludeFromDiscoveries>())
                         {
+                            DiscoveryTracker.MarkDiscovered(discoveryThing.Faction.def);
                             if (!DiscoveriesMod.settings.displayOnlyUnlocks || discoveryThing.Faction.def.HasModExtension<UnlockResearchOnDiscovery>())
                             {
-                                DiscoveryTracker.MarkDiscovered(discoveryThing.Faction.def);
                                 DiscoveryQueue.EnqueueDiscovery(discoveryThing.Faction.def, discoveryThing);
                                 anyDiscovery = true;
                             }
