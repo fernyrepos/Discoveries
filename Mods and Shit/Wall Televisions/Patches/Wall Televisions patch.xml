@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Patch>          
+
+  <Operation Class="PatchOperationFindMod">
+    <mods>
+      <li>Vanilla Furniture Expanded</li>
+    </mods>
+
+    <!-- VFE is loaded: require GMR too -->
+    <match Class="PatchOperationFindMod">
+      <mods>
+        <li>Generally More Research</li>
+      </mods>
+      <match Class="PatchOperationSequence">
+        <operations>
+
+          <li Class="PatchOperationAddModExtension">
+            <xpath>Defs/ThingDef[defName="XER_WallTubeTelevision"]</xpath>
+            <value>
+              <li Class="Discoveries.UnlockResearchOnDiscovery">
+                <researchProject>FlatscreenTelevision</researchProject>
+              </li>
+            </value>
+          </li>
+
+        </operations>
+      </match>
+    </match>
+
+    <!-- VFE is NOT loaded: so run -->
+    <nomatch Class="PatchOperationSequence">
+      <operations>
+
+        <li Class="PatchOperationAddModExtension">
+          <xpath>Defs/ThingDef[defName="XER_WallTubeTelevision"]</xpath>
+          <value>
+            <li Class="Discoveries.UnlockResearchOnDiscovery">
+              <researchProject>FlatscreenTelevision</researchProject>
+            </li>
+          </value>
+        </li>
+
+      </operations>
+    </nomatch>
+
+  </Operation>
+
+
+</Patch>
