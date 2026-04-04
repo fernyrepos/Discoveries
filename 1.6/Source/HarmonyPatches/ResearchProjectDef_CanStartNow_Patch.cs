@@ -8,7 +8,7 @@ namespace Discoveries
         public static bool shouldSkip;
         public static void Postfix(ResearchProjectDef __instance, ref bool __result)
         {
-            if (shouldSkip is false && __result && DiscoveryTracker.HasDiscoveryRequirement(__instance) && !DiscoveryTracker.IsResearchDiscovered(__instance))
+            if (shouldSkip is false && __result && DiscoveryTracker.IsResearchLockedByDiscovery(__instance))
             {
                 __result = false;
             }

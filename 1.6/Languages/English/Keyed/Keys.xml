@@ -16,7 +16,9 @@
   <Disc_SaveToClient>Save discoveries to client instead of save file</Disc_SaveToClient>
   <Disc_DisableResearchUnlockSystem>Disable research unlock system (treat all research as unlocked)</Disc_DisableResearchUnlockSystem>
   <Disc_ResetSaveFile>Reset all discoveries on this save file</Disc_ResetSaveFile>
+  <Disc_ConfirmResetSaveFile>Are you sure you want to reset all discoveries on this save file?</Disc_ConfirmResetSaveFile>
   <Disc_ResetClient>Reset all discoveries saved to client</Disc_ResetClient>
+  <Disc_ConfirmResetClient>Are you sure you want to reset all discoveries saved to the client?</Disc_ConfirmResetClient>
   <Disc_ResearchNotDiscovered>A relevant thing or creature has not been discovered yet.</Disc_ResearchNotDiscovered>
   <Disc_ResearchUnlocked>Due to this discovery, {0} is now available to research.</Disc_ResearchUnlocked>
   <Disc_ResearchUnlockedFuture>This discovery has unlocked access to a future research project.</Disc_ResearchUnlockedFuture>

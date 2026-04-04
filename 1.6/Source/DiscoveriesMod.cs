@@ -40,14 +40,20 @@ namespace Discoveries
             {
                 if (!settings.saveToClient)
                 {
-                    DiscoveryTracker.Reset();
+                    Find.WindowStack.Add(Dialog_MessageBox.CreateConfirmation("Disc_ConfirmResetSaveFile".Translate(), delegate
+                    {
+                        DiscoveryTracker.Reset();
+                    }));
                 }
             }
             if (listing.ButtonText("Disc_ResetClient".Translate()))
             {
                 if (settings.saveToClient)
                 {
-                    DiscoveryTracker.Reset();
+                    Find.WindowStack.Add(Dialog_MessageBox.CreateConfirmation("Disc_ConfirmResetClient".Translate(), delegate
+                    {
+                        DiscoveryTracker.Reset();
+                    }));
                 }
             }
             listing.End();

@@ -253,7 +253,7 @@ namespace Discoveries
 
         public static bool IsResearchLockedByDiscovery(ResearchProjectDef research)
         {
-            if (DiscoveriesMod.settings.disableResearchUnlockSystem)
+            if (!DiscoveriesMod.settings.discoveryEnabled || DiscoveriesMod.settings.disableResearchUnlockSystem)
             {
                 return false;
             }
