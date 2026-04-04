@@ -1,20 +1,20 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <LanguageData>
   <Disc_YouDiscovered>You discovered:</Disc_YouDiscovered>
-  <Disc_GotIt>Got it!</Disc_GotIt>
+  <Disc_GotIt>Got it</Disc_GotIt>
   <Disc_ViewGenes>View genes</Disc_ViewGenes>
   <Disc_CustomXenotype>Custom xenotype: {0}</Disc_CustomXenotype>
-  <Disc_EnableDiscoverySystem>Enable discovery system</Disc_EnableDiscoverySystem>
-  <Disc_ExcludeStartingScenario>Exclude everything spawned from starting scenario</Disc_ExcludeStartingScenario>
-  <Disc_ExcludeStartingXenotypes>Exclude starting pawn xenotypes from discovery</Disc_ExcludeStartingXenotypes>
-  <Disc_ExcludeStartingAnimals>Exclude starting colony animals from discovery</Disc_ExcludeStartingAnimals>
+  <Disc_EnableDiscoverySystem>Enable mod</Disc_EnableDiscoverySystem>
+  <Disc_ExcludeStartingScenario>Auto-discover everything spawned from starting scenario</Disc_ExcludeStartingScenario>
+  <Disc_ExcludeStartingXenotypes>Auto-discover starting pawn xenotypes</Disc_ExcludeStartingXenotypes>
+  <Disc_ExcludeStartingAnimals>Auto-discover starting colony animals</Disc_ExcludeStartingAnimals>
   <Disc_EnableDiscoveryForThings>Enable discovery for things</Disc_EnableDiscoveryForThings>
   <Disc_EnableDiscoveryForPawns>Enable discovery for pawns</Disc_EnableDiscoveryForPawns>
   <Disc_ObscureUnavailableResearch>Obscure names of discovered projects not yet available to the player</Disc_ObscureUnavailableResearch>
   <Disc_ObscureHigherTechLevel>Obscure names of projects not in your tech level</Disc_ObscureHigherTechLevel>
   <Disc_DisplayOnlyUnlocks>Display discoveries only if they are tied to unlocks</Disc_DisplayOnlyUnlocks>
   <Disc_SaveToClient>Save discoveries to client instead of save file</Disc_SaveToClient>
-  <Disc_DisableResearchUnlockSystem>Disable research unlock system (treat all research as unlocked)</Disc_DisableResearchUnlockSystem>
+  <Disc_DisableResearchUnlockSystem>Disable locking research behind discoveries</Disc_DisableResearchUnlockSystem>
   <Disc_ResetSaveFile>Reset all discoveries on this save file</Disc_ResetSaveFile>
   <Disc_ConfirmResetSaveFile>Are you sure you want to reset all discoveries on this save file?</Disc_ConfirmResetSaveFile>
   <Disc_ResetClient>Reset all discoveries saved to client</Disc_ResetClient>
