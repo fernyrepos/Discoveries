@@ -1,0 +1,182 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Patch>
+
+<Operation Class="PatchOperationAddModExtension">
+    <xpath>Defs/ThingDef[defName="MealSimple"]</xpath>
+    <value>
+      <li Class="Discoveries.UnlockResearchOnDiscovery"><researchProject>Ferny_FineMeals</researchProject></li>
+    </value>
+  </Operation>
+
+  <Operation Class="PatchOperationAddModExtension">
+    <xpath>Defs/ThingDef[defName="MealFine"]</xpath>
+    <value>
+      <li Class="Discoveries.UnlockResearchOnDiscovery"><researchProject>Ferny_LavishMeals</researchProject></li>
+    </value>
+  </Operation>
+
+  <Operation Class="PatchOperationAddModExtension">
+    <xpath>Defs/ThingDef[defName="MealFine_Meat"]</xpath>
+    <value>
+      <li Class="Discoveries.UnlockResearchOnDiscovery"><researchProject>Ferny_LavishMeals</researchProject></li>
+    </value>
+  </Operation>
+
+  <Operation Class="PatchOperationAddModExtension">
+    <xpath>Defs/ThingDef[defName="MealFine_Veg"]</xpath>
+    <value>
+      <li Class="Discoveries.UnlockResearchOnDiscovery"><researchProject>Ferny_LavishMeals</researchProject></li>
+    </value>
+  </Operation>
+
+  <Operation Class="PatchOperationFindMod">
+    <mods>
+      <li>Vanilla Cooking Expanded</li>
+    </mods>
+    <match Class="PatchOperationSequence">
+      <operations>
+        <li Class="PatchOperationAddModExtension">
+          <xpath>Defs/ThingDef[defName="MealLavish"]</xpath>
+          <value>
+            <li Class="Discoveries.UnlockResearchOnDiscovery"><researchProject>Ferny_GourmetMeals</researchProject></li>
+          </value>
+        </li>
+        <li Class="PatchOperationAddModExtension">
+          <xpath>Defs/ThingDef[defName="MealLavish_Meat"]</xpath>
+          <value>
+            <li Class="Discoveries.UnlockResearchOnDiscovery"><researchProject>Ferny_GourmetMeals</researchProject></li>
+          </value>
+        </li>
+        <li Class="PatchOperationAddModExtension">
+          <xpath>Defs/ThingDef[defName="MealLavish_Veg"]</xpath>
+          <value>
+            <li Class="Discoveries.UnlockResearchOnDiscovery"><researchProject>Ferny_GourmetMeals</researchProject></li>
+          </value>
+        </li>
+        <li Class="PatchOperationAddModExtension">
+          <xpath>Defs/ThingDef[defName="VCE_SimpleBake"]</xpath>
+          <value>
+            <li Class="Discoveries.UnlockResearchOnDiscovery"><researchProject>Ferny_FineBakes</researchProject></li>
+          </value>
+        </li>
+        <li Class="PatchOperationAddModExtension">
+          <xpath>Defs/ThingDef[defName="VCE_FineBake"]</xpath>
+          <value>
+            <li Class="Discoveries.UnlockResearchOnDiscovery"><researchProject>Ferny_LavishBakes</researchProject></li>
+          </value>
+        </li>
+        <li Class="PatchOperationAddModExtension">
+          <xpath>Defs/ThingDef[defName="VCE_LavishBake"]</xpath>
+          <value>
+            <li Class="Discoveries.UnlockResearchOnDiscovery"><researchProject>Ferny_GourmetBakes</researchProject></li>
+          </value>
+        </li>
+        <li Class="PatchOperationAddModExtension">
+          <xpath>Defs/ThingDef[defName="VCE_SimpleDessert"]</xpath>
+          <value>
+            <li Class="Discoveries.UnlockResearchOnDiscovery"><researchProject>Ferny_FineDesserts</researchProject></li>
+          </value>
+        </li>
+        <li Class="PatchOperationAddModExtension">
+          <xpath>Defs/ThingDef[defName="VCE_FineDessert"]</xpath>
+          <value>
+            <li Class="Discoveries.UnlockResearchOnDiscovery"><researchProject>Ferny_LavishDesserts</researchProject></li>
+          </value>
+        </li>
+        <li Class="PatchOperationAddModExtension">
+          <xpath>Defs/ThingDef[defName="VCE_LavishDessert"]</xpath>
+          <value>
+            <li Class="Discoveries.UnlockResearchOnDiscovery"><researchProject>Ferny_GourmetDesserts</researchProject></li>
+          </value>
+        </li>
+        <li Class="PatchOperationAddModExtension">
+          <xpath>Defs/ThingDef[defName="RawAgave"]</xpath>
+          <value>
+            <li Class="Discoveries.UnlockResearchOnDiscovery"><researchProject>Ferny_AgaveNectar</researchProject></li>
+          </value>
+        </li>
+        <li Class="PatchOperationAddModExtension">
+          <xpath>Defs/ThingDef[defName="Chocolate"]</xpath>
+          <value>
+            <li Class="Discoveries.UnlockResearchOnDiscovery"><researchProject>Ferny_ChocolateSyrup</researchProject></li>
+          </value>
+        </li>
+        <li Class="PatchOperationAddModExtension">
+          <xpath>Defs/ThingDef[defName="InsectJelly"]</xpath>
+          <value>
+            <li Class="Discoveries.UnlockResearchOnDiscovery"><researchProject>Ferny_InsectJellySweetener</researchProject></li>
+          </value>
+        </li>
+        <li Class="PatchOperationAddModExtension">
+          <xpath>Defs/ThingDef[defName="SmokeleafLeaves"]</xpath>
+          <value>
+            <li Class="Discoveries.UnlockResearchOnDiscovery"><researchProject>Ferny_SmokeleafButter</researchProject></li>
+          </value>
+        </li>
+      </operations>
+    </match>
+  </Operation>
+
+  <Operation Class="PatchOperationFindMod">
+    <mods>
+      <li>Vanilla Plants Expanded</li>
+    </mods>
+    <match Class="PatchOperationFindMod">
+      <mods>
+        <li>Vanilla Cooking Expanded</li>
+      </mods>
+      <match Class="PatchOperationAddModExtension">
+        <xpath>Defs/ThingDef[defName="VCE_RawPepper"]</xpath>
+        <value>
+          <li Class="Discoveries.UnlockResearchOnDiscovery"><researchProject>Ferny_HotSauce</researchProject></li>
+        </value>
+      </match>
+    </match>
+  </Operation>
+
+  <Operation Class="PatchOperationFindMod">
+    <mods>
+      <li>Vanilla Brewing Expanded</li>
+    </mods>
+    <match Class="PatchOperationFindMod">
+      <mods>
+        <li>Vanilla Cooking Expanded</li>
+      </mods>
+      <match Class="PatchOperationSequence">
+        <operations>
+          <li Class="PatchOperationAddModExtension">
+            <xpath>Defs/ThingDef[defName="WakeUp"]</xpath>
+            <value>
+              <li Class="Discoveries.UnlockResearchOnDiscovery"><researchProject>Ferny_WakeUpPowder</researchProject></li>
+            </value>
+          </li>
+          <li Class="PatchOperationAddModExtension">
+            <xpath>Defs/ThingDef[defName="GoJuice"]</xpath>
+            <value>
+              <li Class="Discoveries.UnlockResearchOnDiscovery"><researchProject>Ferny_GoJuiceStock</researchProject></li>
+            </value>
+          </li>
+          <li Class="PatchOperationAddModExtension">
+            <xpath>Defs/ThingDef[defName="Luciferium"]</xpath>
+            <value>
+              <li Class="Discoveries.UnlockResearchOnDiscovery"><researchProject>Ferny_LuciferiumPowder</researchProject></li>
+            </value>
+          </li>
+        </operations>
+      </match>
+    </match>
+  </Operation>
+
+  <Operation Class="PatchOperationFindMod">
+    <mods>
+      <li>Vanilla Cooking Expanded - Sushi</li>
+    </mods>
+    <match Class="PatchOperationAddModExtension">
+      <xpath>Defs/ThingDef[defName="VCE_RawWasabi"]</xpath>
+      <value>
+        <li Class="Discoveries.UnlockResearchOnDiscovery"><researchProject>Ferny_WasabiPaste</researchProject></li>
+      </value>
+    </match>
+  </Operation>
+
+</Patch>

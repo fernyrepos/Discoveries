@@ -20,5 +20,15 @@
     <li IfModActive="vemp.pipenetwork">Mods and Shit/Milk Pipe Network</li>
     <li IfModActive="zarii.whitenoise">Mods and Shit/White Noise</li>
     <li IfModActive="xercaine.walltelevisions">Mods and Shit/Wall Televisions</li>
+    <li IfModActive="ferny.progressionfactories">Mods and Shit/Progression Factories</li>
+    <li IfModActive="vanillaexpanded.vpsycastse">Mods and Shit/VE Psycasts</li>
+    <li IfModActive="ferny.progressionattire">Mods and Shit/Progression Attire</li>
+    <li IfModActive="vanillaexpanded.vcookesushi">Mods and Shit/VCE Sushi</li>
+    <li IfModActive="det.sbdelights">Mods and Shit/Stoneborn Delights</li>
+    <li IfModActive="ferny.progressionkitchen">Mods and Shit/Progression Kitchen</li>
+    <li IfModActive="oskarpotocki.vfe.classical">Mods and Shit/VFE Classical</li>
+    <li IfModActive="ferny.progressionstorage">Mods and Shit/Progression Storage</li>
+    <li IfModActive="ferny.generallymoreresearch">Mods and Shit/Generally More Research</li>
+    <li IfModActive="ferny.progressiondrugs">Mods and Shit/Progression Drugs</li>
   </v1.6>
 </loadFolders>
