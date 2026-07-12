@@ -9,43 +9,10 @@ namespace Discoveries
     {
         public static void Postfix(Selector __instance, object obj)
         {
-            if (!DiscoveriesMod.settings.discoveryEnabled) return;
             if (obj is Thing thing && __instance.SingleSelectedThing == thing)
             {
-                bool anyDiscovery = false;
-                Thing discoveryThing = DiscoveryTracker.GetDiscoveryThing(thing);
-
-                if (!DiscoveryTracker.IsDiscovered(discoveryThing) && !DiscoveryTracker.ShouldExcludeThing(discoveryThing))
+                if (DiscoveryTracker.TryDiscover(thing, true))
                 {
-                    Def targetDef = discoveryThing.def;
-                    if (discoveryThing is Pawn p && p.genes?.Xenotype != null) targetDef = p.genes.Xenotype;
-                    DiscoveryTracker.MarkDiscovered(discoveryThing);
-                    if (!DiscoveriesMod.settings.displayOnlyUnlocks || targetDef.HasModExtension<UnlockResearchOnDiscovery>())
-                    {
-                        DiscoveryQueue.EnqueueDiscovery(targetDef, discoveryThing);
-                        anyDiscovery = true;
-                    }
-                }
-
-                if (discoveryThing.Faction != null && discoveryThing.Faction.def != null)
-                {
-                    if (!DiscoveryTracker.IsDiscovered(discoveryThing.Faction.def))
-                    {
-                        if (!discoveryThing.Faction.IsPlayer && !discoveryThing.Faction.def.HasModExtension<ExcludeFromDiscoveries>())
-                        {
-                            DiscoveryTracker.MarkDiscovered(discoveryThing.Faction.def);
-                            if (!DiscoveriesMod.settings.displayOnlyUnlocks || discoveryThing.Faction.def.HasModExtension<UnlockResearchOnDiscovery>())
-                            {
-                                DiscoveryQueue.EnqueueDiscovery(discoveryThing.Faction.def, discoveryThing);
-                                anyDiscovery = true;
-                            }
-                        }
-                    }
-                }
-
-                if (anyDiscovery)
-                {
-                    DiscoveryQueue.StartDiscoverySequence(discoveryThing);
                     __instance.ClearSelection();
                     DiscoveryQueue.TryShowNext();
                 }

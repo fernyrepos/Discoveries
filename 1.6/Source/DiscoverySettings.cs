@@ -14,6 +14,7 @@ namespace Discoveries
         public bool displayOnlyUnlocks = false;
         public bool saveToClient = false;
         public bool disableResearchUnlockSystem = false;
+        public int muteDays = 0;
         public override void ExposeData()
         {
             base.ExposeData();
@@ -28,6 +29,7 @@ namespace Discoveries
             Scribe_Values.Look(ref displayOnlyUnlocks, "displayOnlyUnlocks", false);
             Scribe_Values.Look(ref saveToClient, "saveToClient", false);
             Scribe_Values.Look(ref disableResearchUnlockSystem, "disableResearchUnlockSystem", false);
+            Scribe_Values.Look(ref muteDays, "muteDays", 0);
             if (saveToClient)
             {
                 DiscoveryTracker.ExposeData();

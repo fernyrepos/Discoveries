@@ -22,4 +22,6 @@
   <Disc_ResearchNotDiscovered>A relevant thing or creature has not been discovered yet.</Disc_ResearchNotDiscovered>
   <Disc_ResearchUnlocked>Due to this discovery, {0} is now available to research.</Disc_ResearchUnlocked>
   <Disc_ResearchUnlockedFuture>This discovery has unlocked access to a future research project.</Disc_ResearchUnlockedFuture>
+  <Disc_MuteDays_Off>Mute discoveries for first few days: Off</Disc_MuteDays_Off>
+  <Disc_MuteDays_On>Mute discoveries for first few days: {0} days</Disc_MuteDays_On>
 </LanguageData>

@@ -151,6 +151,66 @@ namespace Discoveries
         {
             return lockedResearchCache.Contains(research);
         }
+        public static bool IsMuted()
+        {
+            if (DiscoveriesMod.settings.muteDays > 0 && Current.ProgramState == ProgramState.Playing)
+            {
+                return Find.TickManager.TicksGame < DiscoveriesMod.settings.muteDays * GenDate.TicksPerDay;
+            }
+            return false;
+        }
+        public static bool TryDiscover(Thing thing, bool selectAfter = false)
+        {
+            if (!DiscoveriesMod.settings.discoveryEnabled) return false;
+            var anyDiscovery = false;
+            var discoveryThing = GetDiscoveryThing(thing);
+            if (!IsDiscovered(discoveryThing) && !ShouldExcludeThing(discoveryThing))
+            {
+                Def targetDef = discoveryThing.def;
+                if (discoveryThing is Pawn p && p.genes?.Xenotype != null)
+                {
+                    targetDef = p.genes.Xenotype;
+                }
+                MarkDiscovered(discoveryThing);
+                var showPopup = !DiscoveriesMod.settings.displayOnlyUnlocks || targetDef.HasModExtension<UnlockResearchOnDiscovery>();
+                if (showPopup && !IsMuted())
+                {
+                    DiscoveryQueue.EnqueueDiscovery(targetDef, discoveryThing);
+                    anyDiscovery = true;
+                }
+                else
+                {
+                    CheckAndQueueUnlocksFor(targetDef, IsMuted());
+                }
+            }
+            if (discoveryThing.Faction != null && discoveryThing.Faction.def != null)
+            {
+                var factionDef = discoveryThing.Faction.def;
+                if (!IsDiscovered(factionDef))
+                {
+                    if (!discoveryThing.Faction.IsPlayer && !factionDef.HasModExtension<ExcludeFromDiscoveries>())
+                    {
+                        MarkDiscovered(factionDef);
+                        var isUntextured = factionDef.factionIconPath.NullOrEmpty();
+                        var showPopup = !isUntextured && (!DiscoveriesMod.settings.displayOnlyUnlocks || factionDef.HasModExtension<UnlockResearchOnDiscovery>());
+                        if (showPopup && !IsMuted())
+                        {
+                            DiscoveryQueue.EnqueueDiscovery(factionDef, discoveryThing);
+                            anyDiscovery = true;
+                        }
+                        else
+                        {
+                            CheckAndQueueUnlocksFor(factionDef, IsMuted());
+                        }
+                    }
+                }
+            }
+            if (anyDiscovery && selectAfter)
+            {
+                DiscoveryQueue.StartDiscoverySequence(discoveryThing);
+            }
+            return anyDiscovery;
+        }
         public static void UnlockResearchForThing(Thing thing, bool showMessage = true)
         {
             foreach (var extension in thing.def.modExtensions?.OfType<UnlockResearchOnDiscovery>() ?? Enumerable.Empty<UnlockResearchOnDiscovery>())
@@ -162,7 +222,7 @@ namespace Discoveries
                         continue;
                     }
                     MarkResearchDiscovered(project);
-                    if (showMessage)
+                    if (showMessage && !IsMuted())
                     {
                         DefsOf.Disc_ResearchUnlock.PlayOneShotOnCamera();
                         string message = ShouldObscureResearch(project) ? "Disc_ResearchUnlockedFuture".Translate() : "Disc_ResearchUnlocked".Translate(project.LabelCap);
@@ -171,7 +231,7 @@ namespace Discoveries
                 }
             }
         }
-        public static void CheckAndQueueUnlocksFor(Def discoveredDef)
+        public static void CheckAndQueueUnlocksFor(Def discoveredDef, bool silent = false)
         {
             foreach (var extension in discoveredDef.modExtensions?.OfType<UnlockResearchOnDiscovery>() ?? Enumerable.Empty<UnlockResearchOnDiscovery>())
             {
@@ -180,8 +240,11 @@ namespace Discoveries
                     if (!IsResearchDiscovered(project))
                     {
                         MarkResearchDiscovered(project);
-                        string msg = ShouldObscureResearch(project) ? "Disc_ResearchUnlockedFuture".Translate() : "Disc_ResearchUnlocked".Translate(project.LabelCap);
-                        DiscoveryQueue.EnqueueMessage(msg);
+                        if (!silent && !IsMuted())
+                        {
+                            string msg = ShouldObscureResearch(project) ? "Disc_ResearchUnlockedFuture".Translate() : "Disc_ResearchUnlocked".Translate(project.LabelCap);
+                            DiscoveryQueue.EnqueueMessage(msg);
+                        }
                     }
                 }
             }

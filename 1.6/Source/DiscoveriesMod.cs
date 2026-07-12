@@ -35,6 +35,11 @@ namespace Discoveries
             listing.CheckboxLabeled("Disc_DisableResearchUnlockSystem".Translate(), ref settings.disableResearchUnlockSystem);
             listing.CheckboxLabeled("Disc_SaveToClient".Translate(), ref settings.saveToClient);
             listing.Gap();
+            var muteLabel = settings.muteDays == 0 ? "Disc_MuteDays_Off".Translate() : "Disc_MuteDays_On".Translate(settings.muteDays);
+            listing.Label(muteLabel);
+            var muteDaysFloat = listing.Slider(settings.muteDays, 0f, 30f);
+            settings.muteDays = Mathf.RoundToInt(muteDaysFloat);
+            listing.Gap();
 
             if (listing.ButtonText("Disc_ResetSaveFile".Translate()))
             {
