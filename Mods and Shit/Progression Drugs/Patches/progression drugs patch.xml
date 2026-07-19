@@ -13,4 +13,239 @@
     </match>
   </Operation>
 
+<Operation Class="PatchOperationConditional">
+    <xpath>Defs/ThingDef[defName="PsychoidLeaves"]</xpath>
+    <match Class="PatchOperationAddModExtension">
+      <xpath>Defs/ThingDef[defName="PsychoidLeaves"]</xpath>
+      <value>
+        <li Class="Discoveries.UnlockResearchOnDiscovery"><researchProject>Ferny_Flake</researchProject></li>
+      </value>
+    </match>
+  </Operation>
+
+  <Operation Class="PatchOperationFindMod">
+    <mods>
+      <li>Rim-Gnoblins</li>
+    </mods>
+    <match Class="PatchOperationSequence">
+      <operations>
+        <li Class="PatchOperationConditional">
+          <xpath>Defs/ThingDef[defName="Chemfuel"]</xpath>
+          <match Class="PatchOperationAddModExtension">
+            <xpath>Defs/ThingDef[defName="Chemfuel"]</xpath>
+            <value>
+              <li Class="Discoveries.UnlockResearchOnDiscovery"><researchProject>Ferny_Shiver</researchProject></li>
+            </value>
+          </match>
+        </li>
+      </operations>
+    </match>
+  </Operation>
+
+  <Operation Class="PatchOperationFindMod">
+    <mods>
+      <li>Stoneborn - Delights</li>
+    </mods>
+    <match Class="PatchOperationSequence">
+      <operations>
+        <li Class="PatchOperationConditional">
+          <xpath>Defs/ThingDef[defName="SD_Feywing"]</xpath>
+          <match Class="PatchOperationAddModExtension">
+            <xpath>Defs/ThingDef[defName="SD_Feywing"]</xpath>
+            <value>
+              <li Class="Discoveries.UnlockResearchOnDiscovery"><researchProject>Ferny_FeywingJoint</researchProject></li>
+            </value>
+          </match>
+        </li>
+        <li Class="PatchOperationConditional">
+          <xpath>Defs/ThingDef[defName="SD_RawBullHorns"]</xpath>
+          <match Class="PatchOperationAddModExtension">
+            <xpath>Defs/ThingDef[defName="SD_RawBullHorns"]</xpath>
+            <value>
+              <li Class="Discoveries.UnlockResearchOnDiscovery"><researchProject>Ferny_Redspice</researchProject></li>
+            </value>
+          </match>
+        </li>
+      </operations>
+    </match>
+  </Operation>
+
+  <Operation Class="PatchOperationFindMod">
+    <mods>
+      <li>Vanilla Genetics Expanded</li>
+    </mods>
+    <match Class="PatchOperationSequence">
+      <operations>
+        <li Class="PatchOperationConditional">
+          <xpath>Defs/ThingDef[defName="GR_Chickenbearfeathers"]</xpath>
+          <match Class="PatchOperationAddModExtension">
+            <xpath>Defs/ThingDef[defName="GR_Chickenbearfeathers"]</xpath>
+            <value>
+              <li Class="Discoveries.UnlockResearchOnDiscovery"><researchProject>Ferny_FeatherdustJoint</researchProject></li>
+            </value>
+          </match>
+        </li>
+      </operations>
+    </match>
+  </Operation>
+
+  <Operation Class="PatchOperationFindMod">
+    <mods>
+      <li>Mythic Ages: Megafauna Bestiary</li>
+    </mods>
+    <match Class="PatchOperationSequence">
+      <operations>
+        <li Class="PatchOperationConditional">
+          <xpath>Defs/ThingDef[defName="MA_HarpeagleFeather"]</xpath>
+          <match Class="PatchOperationAddModExtension">
+            <xpath>Defs/ThingDef[defName="MA_HarpeagleFeather"]</xpath>
+            <value>
+              <li Class="Discoveries.UnlockResearchOnDiscovery"><researchProject>Ferny_SkyfeatherPipe</researchProject></li>
+            </value>
+          </match>
+        </li>
+      </operations>
+    </match>
+  </Operation>
+
+  <Operation Class="PatchOperationFindMod">
+    <mods>
+      <li>Vanilla Brewing Expanded</li>
+    </mods>
+    <match Class="PatchOperationSequence">
+      <operations>
+        <li Class="PatchOperationConditional">
+          <xpath>Defs/ThingDef[defName="VBE_RawTobacco"]</xpath>
+          <match Class="PatchOperationAddModExtension">
+            <xpath>Defs/ThingDef[defName="VBE_RawTobacco"]</xpath>
+            <value>
+              <li Class="Discoveries.UnlockResearchOnDiscovery"><researchProject>Ferny_Cigarettes</researchProject></li>
+            </value>
+          </match>
+        </li>
+      </operations>
+    </match>
+  </Operation>
+
+  <Operation Class="PatchOperationFindMod">
+    <mods>
+      <li>Medicines+</li>
+    </mods>
+    <match Class="PatchOperationSequence">
+      <operations>
+        <li Class="PatchOperationConditional">
+          <xpath>Defs/ThingDef[defName="PoppyLatex"]</xpath>
+          <match Class="PatchOperationAddModExtension">
+            <xpath>Defs/ThingDef[defName="PoppyLatex"]</xpath>
+            <value>
+              <li Class="Discoveries.UnlockResearchOnDiscovery"><researchProject>Ferny_Morphine</researchProject></li>
+            </value>
+          </match>
+        </li>
+      </operations>
+    </match>
+  </Operation>
+
+  <Operation Class="PatchOperationFindMod">
+    <mods>
+      <li>Medical Expansion - Addiction Treatment</li>
+    </mods>
+    <match Class="PatchOperationSequence">
+      <operations>
+        <li Class="PatchOperationConditional">
+          <xpath>Defs/ThingDef[defName="Ambrosia"]</xpath>
+          <match Class="PatchOperationAddModExtension">
+            <xpath>Defs/ThingDef[defName="Ambrosia"]</xpath>
+            <value>
+              <li Class="Discoveries.UnlockResearchOnDiscovery"><researchProject>Ferny_AmbrosiaTreatmentPill</researchProject></li>
+            </value>
+          </match>
+        </li>
+        <li Class="PatchOperationConditional">
+          <xpath>Defs/ThingDef[defName="GoJuice"]</xpath>
+          <match Class="PatchOperationAddModExtension">
+            <xpath>Defs/ThingDef[defName="GoJuice"]</xpath>
+            <value>
+              <li Class="Discoveries.UnlockResearchOnDiscovery"><researchProject>Ferny_GoJuiceTreatmentPill</researchProject></li>
+            </value>
+          </match>
+        </li>
+        <li Class="PatchOperationConditional">
+          <xpath>Defs/ThingDef[defName="PsychoidLeaves"]</xpath>
+          <match Class="PatchOperationAddModExtension">
+            <xpath>Defs/ThingDef[defName="PsychoidLeaves"]</xpath>
+            <value>
+              <li Class="Discoveries.UnlockResearchOnDiscovery"><researchProject>Ferny_PsychiteTreatmentPill</researchProject></li>
+            </value>
+          </match>
+        </li>
+        <li Class="PatchOperationConditional">
+          <xpath>Defs/ThingDef[defName="SmokeleafLeaves"]</xpath>
+          <match Class="PatchOperationAddModExtension">
+            <xpath>Defs/ThingDef[defName="SmokeleafLeaves"]</xpath>
+            <value>
+              <li Class="Discoveries.UnlockResearchOnDiscovery"><researchProject>Ferny_SmokeleafTreatmentPill</researchProject></li>
+            </value>
+          </match>
+        </li>
+        <li Class="PatchOperationConditional">
+          <xpath>Defs/ThingDef[defName="WakeUp"]</xpath>
+          <match Class="PatchOperationAddModExtension">
+            <xpath>Defs/ThingDef[defName="WakeUp"]</xpath>
+            <value>
+              <li Class="Discoveries.UnlockResearchOnDiscovery"><researchProject>Ferny_WakeUpTreatmentPill</researchProject></li>
+            </value>
+          </match>
+        </li>
+      </operations>
+    </match>
+  </Operation>
+
+  <Operation Class="PatchOperationFindMod">
+    <mods>
+      <li>Vanilla Factions Expanded - Medieval 2</li>
+    </mods>
+    <match Class="PatchOperationFindMod">
+      <mods>
+        <li>Biotech</li>
+      </mods>
+      <match Class="PatchOperationSequence">
+        <operations>
+          <li Class="PatchOperationConditional">
+            <xpath>Defs/ThingDef[defName="HemogenPack"]</xpath>
+            <match Class="PatchOperationAddModExtension">
+              <xpath>Defs/ThingDef[defName="HemogenPack"]</xpath>
+              <value>
+                <li Class="Discoveries.UnlockResearchOnDiscovery"><researchProject>Ferny_HemogenDraught</researchProject></li>
+              </value>
+            </match>
+          </li>
+        </operations>
+      </match>
+    </match>
+  </Operation>
+
+  <Operation Class="PatchOperationFindMod">
+    <mods>
+      <li>Vanilla Factions Expanded - Medieval 2</li>
+    </mods>
+    <match Class="PatchOperationFindMod">
+      <mods>
+        <li>Vanilla Factions Expanded - Insectoids 2</li>
+      </mods>
+      <match Class="PatchOperationSequence">
+        <operations>
+          <li Class="PatchOperationConditional">
+            <xpath>Defs/ThingDef[defName="VFEI2_RoyalInsectJelly"]</xpath>
+            <match Class="PatchOperationAddModExtension">
+              <xpath>Defs/ThingDef[defName="VFEI2_RoyalInsectJelly"]</xpath>
+              <value>
+                <li Class="Discoveries.UnlockResearchOnDiscovery"><researchProject>Ferny_RoyalJellyDraught</researchProject></li>
+              </value>
+            </match>
+          </li>
+        </operations>
+      </match>
+    </match>
+  </Operation>
 </Patch>

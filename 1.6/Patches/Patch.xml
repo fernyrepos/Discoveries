@@ -114,4 +114,14 @@
       <li Class="Discoveries.UnlockResearchOnDiscovery"><researchProject>WakeUpProduction</researchProject></li>
     </value>
   </Operation>
+
+<Operation Class="PatchOperationConditional">
+    <xpath>Defs/ThingDef[defName="PsychoidLeaves"]</xpath>
+    <match Class="PatchOperationAddModExtension">
+      <xpath>Defs/ThingDef[defName="PsychoidLeaves"]</xpath>
+      <value>
+        <li Class="Discoveries.UnlockResearchOnDiscovery"><researchProject>PsychiteRefining</researchProject></li>
+      </value>
+    </match>
+  </Operation>
 </Patch>

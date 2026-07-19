@@ -81,4 +81,69 @@
       </operations>
     </match>
   </Operation>
+
+<Operation Class="PatchOperationFindMod">
+    <mods>
+      <li>Progression: Kitchen</li>
+    </mods>
+    <match Class="PatchOperationSequence">
+      <operations>
+        <li Class="PatchOperationConditional">
+          <xpath>Defs/ThingDef[defName="DankPyon_GriffonBerry"]</xpath>
+          <match Class="PatchOperationAddModExtension">
+            <xpath>Defs/ThingDef[defName="DankPyon_GriffonBerry"]</xpath>
+            <value>
+              <li Class="Discoveries.UnlockResearchOnDiscovery"><researchProject>Ferny_GriffonBerryWine</researchProject></li>
+            </value>
+          </match>
+        </li>
+        <li Class="PatchOperationConditional">
+          <xpath>Defs/ThingDef[defName="DankPyon_RawMulberry"]</xpath>
+          <match Class="PatchOperationAddModExtension">
+            <xpath>Defs/ThingDef[defName="DankPyon_RawMulberry"]</xpath>
+            <value>
+              <li Class="Discoveries.UnlockResearchOnDiscovery"><researchProject>Ferny_MulberryWine</researchProject></li>
+            </value>
+          </match>
+        </li>
+        <li Class="PatchOperationConditional">
+          <xpath>Defs/ThingDef[defName="DankPyon_RawWheat"]</xpath>
+          <match Class="PatchOperationAddModExtension">
+            <xpath>Defs/ThingDef[defName="DankPyon_RawWheat"]</xpath>
+            <value>
+              <li Class="Discoveries.UnlockResearchOnDiscovery"><researchProject>Ferny_AleBrewing</researchProject></li>
+            </value>
+          </match>
+        </li>
+        <li Class="PatchOperationConditional">
+          <xpath>Defs/ThingDef[defName="DankPyon_JuiceApple"]</xpath>
+          <match Class="PatchOperationAddModExtension">
+            <xpath>Defs/ThingDef[defName="DankPyon_JuiceApple"]</xpath>
+            <value>
+              <li Class="Discoveries.UnlockResearchOnDiscovery"><researchProject>Ferny_CiderBrewing</researchProject></li>
+            </value>
+          </match>
+        </li>
+      </operations>
+    </match>
+  </Operation>
+
+  <Operation Class="PatchOperationFindMod">
+    <mods>
+      <li>Progression: Production</li>
+    </mods>
+    <match Class="PatchOperationSequence">
+      <operations>
+        <li Class="PatchOperationConditional">
+          <xpath>Defs/ThingDef[defName="DankPyon_Trestle"]</xpath>
+          <match Class="PatchOperationAddModExtension">
+            <xpath>Defs/ThingDef[defName="DankPyon_Trestle"]</xpath>
+            <value>
+              <li Class="Discoveries.UnlockResearchOnDiscovery"><researchProject>Ferny_TableSaw</researchProject></li>
+            </value>
+          </match>
+        </li>
+      </operations>
+    </match>
+  </Operation>
 </Patch>
