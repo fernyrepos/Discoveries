@@ -248,4 +248,121 @@
       </match>
     </match>
   </Operation>
+
+<Operation Class="PatchOperationFindMod">
+    <mods>
+      <li>Mythic Ages: Megafauna Bestiary</li>
+    </mods>
+    <match Class="PatchOperationSequence">
+      <operations>
+        <li Class="PatchOperationConditional">
+          <xpath>Defs/ThingDef[defName="MA_Emberheart"]</xpath>
+          <match Class="PatchOperationAddModExtension">
+            <xpath>Defs/ThingDef[defName="MA_Emberheart"]</xpath>
+            <value>
+              <li Class="Discoveries.UnlockResearchOnDiscovery"><researchProject>Ferny_ScarodonHeartPotion</researchProject></li>
+            </value>
+          </match>
+        </li>
+        <li Class="PatchOperationConditional">
+          <xpath>Defs/ThingDef[defName="MA_HellboarLiver"]</xpath>
+          <match Class="PatchOperationAddModExtension">
+            <xpath>Defs/ThingDef[defName="MA_HellboarLiver"]</xpath>
+            <value>
+              <li Class="Discoveries.UnlockResearchOnDiscovery"><researchProject>Ferny_HellboarLiverPotion</researchProject></li>
+            </value>
+          </match>
+        </li>
+        <li Class="PatchOperationConditional">
+          <xpath>Defs/ThingDef[defName="MA_SivaDustIvory"]</xpath>
+          <match Class="PatchOperationAddModExtension">
+            <xpath>Defs/ThingDef[defName="MA_SivaDustIvory"]</xpath>
+            <value>
+              <li Class="Discoveries.UnlockResearchOnDiscovery"><researchProject>Ferny_SivaDustIvoryPotion</researchProject></li>
+            </value>
+          </match>
+        </li>
+        <li Class="PatchOperationConditional">
+          <xpath>Defs/ThingDef[defName="MA_AminoMilk"]</xpath>
+          <match Class="PatchOperationAddModExtension">
+            <xpath>Defs/ThingDef[defName="MA_AminoMilk"]</xpath>
+            <value>
+              <li Class="Discoveries.UnlockResearchOnDiscovery"><researchProject>Ferny_AmineSerum</researchProject></li>
+            </value>
+          </match>
+        </li>
+      </operations>
+    </match>
+  </Operation>
+
+<Operation Class="PatchOperationConditional">
+    <xpath>Defs/ThingDef[defName="SmokeleafLeaves"]</xpath>
+    <match Class="PatchOperationAddModExtension">
+      <xpath>Defs/ThingDef[defName="SmokeleafLeaves"]</xpath>
+      <value>
+        <li Class="Discoveries.UnlockResearchOnDiscovery"><researchProject>Ferny_SmokeleafJoint</researchProject></li>
+      </value>
+    </match>
+  </Operation>
+
+  <Operation Class="PatchOperationFindMod">
+    <mods>
+      <li>Mythic Ages: Megafauna Bestiary</li>
+    </mods>
+    <match Class="PatchOperationSequence">
+      <operations>
+        <li Class="PatchOperationConditional">
+          <xpath>Defs/ThingDef[defName="MA_SivatheriumHorn"]</xpath>
+          <match Class="PatchOperationAddModExtension">
+            <xpath>Defs/ThingDef[defName="MA_SivatheriumHorn"]</xpath>
+            <value>
+              <li Class="Discoveries.UnlockResearchOnDiscovery"><researchProject>Ferny_SivaDustIvory</researchProject></li>
+            </value>
+          </match>
+        </li>
+      </operations>
+    </match>
+  </Operation>
+
+  <Operation Class="PatchOperationFindMod">
+    <mods>
+      <li>Medicines+</li>
+    </mods>
+    <match Class="PatchOperationFindMod">
+      <mods>
+        <li>Deep Pills</li>
+      </mods>
+      <match Class="PatchOperationSequence">
+        <operations>
+          <li Class="PatchOperationConditional">
+            <xpath>Defs/ThingDef[defName="Raw_Opium"]</xpath>
+            <match Class="PatchOperationAddModExtension">
+              <xpath>Defs/ThingDef[defName="Raw_Opium"]</xpath>
+              <value>
+                <li Class="Discoveries.UnlockResearchOnDiscovery"><researchProject>Ferny_OpiumInfusion</researchProject></li>
+              </value>
+            </match>
+          </li>
+          <li Class="PatchOperationConditional">
+            <xpath>Defs/ThingDef[defName="Raw_Peyote"]</xpath>
+            <match Class="PatchOperationAddModExtension">
+              <xpath>Defs/ThingDef[defName="Raw_Peyote"]</xpath>
+              <value>
+                <li Class="Discoveries.UnlockResearchOnDiscovery"><researchProject>Ferny_PeyoteInfusion</researchProject></li>
+              </value>
+            </match>
+          </li>
+          <li Class="PatchOperationConditional">
+            <xpath>Defs/ThingDef[defName="Raw_TWN"]</xpath>
+            <match Class="PatchOperationAddModExtension">
+              <xpath>Defs/ThingDef[defName="Raw_TWN"]</xpath>
+              <value>
+                <li Class="Discoveries.UnlockResearchOnDiscovery"><researchProject>Ferny_ThornweedInfusion</researchProject></li>
+              </value>
+            </match>
+          </li>
+        </operations>
+      </match>
+    </match>
+  </Operation>
 </Patch>

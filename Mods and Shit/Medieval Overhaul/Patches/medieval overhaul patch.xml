@@ -146,4 +146,32 @@
       </operations>
     </match>
   </Operation>
+
+<Operation Class="PatchOperationFindMod">
+    <mods>
+      <li>Progression: Kitchen</li>
+    </mods>
+    <match Class="PatchOperationSequence">
+      <operations>
+        <li Class="PatchOperationConditional">
+          <xpath>Defs/ThingDef[defName="DankPyon_Sugarcane"]</xpath>
+          <match Class="PatchOperationAddModExtension">
+            <xpath>Defs/ThingDef[defName="DankPyon_Sugarcane"]</xpath>
+            <value>
+              <li Class="Discoveries.UnlockResearchOnDiscovery"><researchProject>Ferny_SugarMilling</researchProject></li>
+            </value>
+          </match>
+        </li>
+        <li Class="PatchOperationConditional">
+          <xpath>Defs/ThingDef[defName="DankPyon_RawWheat"]</xpath>
+          <match Class="PatchOperationAddModExtension">
+            <xpath>Defs/ThingDef[defName="DankPyon_RawWheat"]</xpath>
+            <value>
+              <li Class="Discoveries.UnlockResearchOnDiscovery"><researchProject>Ferny_FlourMilling</researchProject></li>
+            </value>
+          </match>
+        </li>
+      </operations>
+    </match>
+  </Operation>
 </Patch>
