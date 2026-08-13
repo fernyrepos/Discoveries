@@ -151,6 +151,20 @@ namespace Discoveries
         {
             return lockedResearchCache.Contains(research);
         }
+        public static bool HasUndiscoveredResearchUnlock(Def def)
+        {
+            foreach (var extension in def.modExtensions?.OfType<UnlockResearchOnDiscovery>() ?? Enumerable.Empty<UnlockResearchOnDiscovery>())
+            {
+                foreach (var project in extension.GetProjects())
+                {
+                    if (project != null && !IsResearchDiscovered(project))
+                    {
+                        return true;
+                    }
+                }
+            }
+            return false;
+        }
         public static bool IsMuted()
         {
             if (DiscoveriesMod.settings.muteDays > 0 && Current.ProgramState == ProgramState.Playing)
@@ -172,7 +186,7 @@ namespace Discoveries
                     targetDef = p.genes.Xenotype;
                 }
                 MarkDiscovered(discoveryThing);
-                var showPopup = !DiscoveriesMod.settings.displayOnlyUnlocks || targetDef.HasModExtension<UnlockResearchOnDiscovery>();
+                var showPopup = !DiscoveriesMod.settings.displayOnlyUnlocks || HasUndiscoveredResearchUnlock(targetDef);
                 if (showPopup && !IsMuted())
                 {
                     DiscoveryQueue.EnqueueDiscovery(targetDef, discoveryThing);
@@ -192,7 +206,7 @@ namespace Discoveries
                     {
                         MarkDiscovered(factionDef);
                         var isUntextured = factionDef.factionIconPath.NullOrEmpty();
-                        var showPopup = !isUntextured && (!DiscoveriesMod.settings.displayOnlyUnlocks || factionDef.HasModExtension<UnlockResearchOnDiscovery>());
+                        var showPopup = !isUntextured && (!DiscoveriesMod.settings.displayOnlyUnlocks || HasUndiscoveredResearchUnlock(factionDef));
                         if (showPopup && !IsMuted())
                         {
                             DiscoveryQueue.EnqueueDiscovery(factionDef, discoveryThing);
