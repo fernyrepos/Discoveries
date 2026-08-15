@@ -365,4 +365,23 @@
       </match>
     </match>
   </Operation>
+
+  <Operation Class="PatchOperationFindMod">
+    <mods>
+      <li>Dark Ages : Beasts and Monsters</li>
+    </mods>
+    <match Class="PatchOperationSequence">
+      <operations>
+        <li Class="PatchOperationConditional">
+          <xpath>Defs/ThingDef[defName="DA_LarpahAntlers"]</xpath>
+          <match Class="PatchOperationAddModExtension">
+            <xpath>Defs/ThingDef[defName="DA_LarpahAntlers"]</xpath>
+            <value>
+              <li Class="Discoveries.UnlockResearchOnDiscovery"><researchProject>Ferny_ScarletScent</researchProject></li>
+            </value>
+          </match>
+        </li>
+      </operations>
+    </match>
+  </Operation>
 </Patch>
